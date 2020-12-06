@@ -8,6 +8,12 @@ services:
       - ./:/app
     ports: 
       - 7777:7777
+    environment:
+      - PGPORT=5432
+      - PGDATABASE=database
+      - PGUSER=username
+      - PGPASSWORD=password
+      - PGHOST=postgres-database
 
   database:
     container_name: "postgres-database"
