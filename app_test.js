@@ -1,4 +1,4 @@
-import { superoak } from "https://deno.land/x/superoak@2.3.1/mod.ts";
+import { superoak } from "./deps.js";
 import { app } from "./app.js";
 
 Deno.test("GET request to / should return 'Hello world!'", async () => {
