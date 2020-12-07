@@ -1,0 +1,21 @@
+<%- include('./partials/header.ejs') %>
+
+<div class="container">
+  <h1>Sign up</h1>
+    <form method="POST" action="/auth/registration">
+      <fieldset>
+        <div class="form-group">
+          <label for="email">Email: </label>
+          <input class="form-control" type="email" id="email" name="email" />
+          <label for="password">Password: </label>
+          <input class="form-control" type="password" id="password" name="password" />
+          <label for="verification">Verify password: </label>
+          <input class="form-control" type="password" id="verification" name="verification" />
+        </div>
+        <input type="submit" value="Sign up" class="btn btn-primary" />
+      </fieldset>
+    </form>
+  <a href="/auth/login">Already registered? Sign in!</a>
+</div>
+
+<%- include('./partials/footer.ejs') %>

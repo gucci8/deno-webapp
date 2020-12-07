@@ -1,0 +1,17 @@
+<nav class="navbar navbar-dark bg-primary">
+  <div class="container-fluid">
+    <a class="navbar-brand">Self-monitoring app</a>
+    <span class="navbar-text">
+      <%= message %>
+    </span>
+    <% if (loggedIn) { %>
+    <form class="d-flex" method="POST" action="/auth/logout">
+      <button class="btn btn-outline-success" type="submit">Log out</button>
+    </form>
+    <% } else { %>
+    <form class="d-flex" method="GET" action="/auth/login">
+      <button class="btn btn-outline-success" type="submit">Sign in</button>
+    </form>
+    <% } %>
+  </div>
+</nav>
