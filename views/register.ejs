@@ -6,13 +6,14 @@
       <fieldset>
         <div class="form-group">
           <label for="email">Email: </label>
-          <input class="form-control" type="email" id="email" name="email" />
+          <input class="form-control" type="email" id="email" name="email" value="<%= email %>" />
           <label for="password">Password: </label>
           <input class="form-control" type="password" id="password" name="password" />
           <label for="verification">Verify password: </label>
           <input class="form-control" type="password" id="verification" name="verification" />
         </div>
         <input type="submit" value="Sign up" class="btn btn-primary" />
+        <%= error %>
       </fieldset>
     </form>
   <a href="/auth/login">Already registered? Sign in!</a>

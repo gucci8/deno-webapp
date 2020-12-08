@@ -1,0 +1,84 @@
+<%- include('../partials/header.ejs') %>
+<%- include('../partials/navbar.ejs') %>
+
+<div class="container">
+    <h1>How was your evening?</h1>
+    <form method="POST" action="/behavior/reporting/evening">
+        <fieldset>
+            
+            <div class="input-group">
+                <span class="input-group-text">Date</span>
+                <input type="number" class="form-control" min="1" max="31" name="day" value="<%= day %>">
+                <input type="number" class="form-control" min="1" max="12" name="month" value="<%= month %>">
+                <input type="number" class="form-control" min="1900" max="2100" name="year" value="<%= year %>">
+            </div>
+
+            <div class="form-group">
+                <label for="customRange1" class="form-label">How many hours did you exercise?</label>
+            </div>
+
+            <div class="form-group">
+                <span class="font-weight-bold blue-text mr-2 mt-1">0</span>
+                <input type="range" class="form-range" min="0" max="8" step="0.5" id="customRange1" name="sportduration">
+                <span class="font-weight-bold blue-text mr-2 mt-1">8</span>
+            </div>
+
+
+            <div class="form-group">
+                <label for="customRange2" class="form-label">How many hours did you study?</label>
+            </div>
+
+            <div class="form-group">
+                <span class="font-weight-bold blue-text mr-2 mt-1">0</span>
+                <input type="range" class="form-range" min="0" max="8" step="0.5" id="customRange2" name="studyduration">
+                <span class="font-weight-bold blue-text mr-2 mt-1">8</span>
+            </div>
+
+
+            <div class="form-group">
+                <label for="customRange3" class="form-label">Rate your regularity:</label>
+            </div>
+
+            <div class="form-group">
+                <span class="font-weight-bold blue-text mr-2 mt-1">1</span>
+                <input type="range" class="form-range" min="1" max="5" step="1" id="customRange3" name="regularity">
+                <span class="font-weight-bold blue-text mr-2 mt-1">5</span>
+            </div>
+
+
+            <div class="form-group">
+                <label for="customRange4" class="form-label">How healthily did you eat?</label>
+            </div>
+
+            <div class="form-group">
+                <span class="font-weight-bold blue-text mr-2 mt-1">1</span>
+                <input type="range" class="form-range" min="1" max="5" step="1" id="customRange4" name="eatquality">
+                <span class="font-weight-bold blue-text mr-2 mt-1">5</span>
+            </div>
+
+
+            <div class="form-group">
+                <label for="customRange5" class="form-label">Rate your generic mood:</label>
+            </div>
+
+            <div class="form-group">
+                <span class="font-weight-bold blue-text mr-2 mt-1">1</span>
+                <input type="range" class="form-range" min="1" max="5" step="1" id="customRange5" name="genericmood">
+                <span class="font-weight-bold blue-text mr-2 mt-1">5</span>
+            </div>
+
+
+            <input type="submit" value="Rate your evening!" class="btn btn-primary" />
+        </fieldset>
+    </form>
+    <ul>
+        <li>
+            <a href="/behavior/reporting/morning">Want to rate your morning instead?</a>
+        </li>
+        <li>
+            <a href="/behavior/reporting">Back to reporting index page</a>
+        </li>
+    </ul>
+</div>
+
+<%- include('../partials/footer.ejs') %>

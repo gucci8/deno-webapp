@@ -1,9 +1,13 @@
 const showLoginForm = ({render}) => {
-    render('login.ejs');
+    const error = "";
+    const email = "";
+    render('login.ejs', { email, error });
 }
 
 const showRegistrationForm = ({render}) => {
-    render('register.ejs');
+    const error = "";
+    const email = "";
+    render('register.ejs', { email, error });
 }
 
 export { showLoginForm, showRegistrationForm };

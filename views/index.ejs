@@ -2,11 +2,20 @@
 <%- include('./partials/navbar.ejs') %>
 
 <div class="container">
-    <h1>Welcome!</h1>
-    <p>Welcome to Self-Monitoring Application made by Kusti Hämäläinen at December 2020 for course project.</p>
+  <h1>Welcome!</h1>
+  <p>Welcome to Self-Monitoring Application made by Kusti Hämäläinen at December 2020 for course project.</p>
+  <p>This website is for monitoring well-being and lifestyle.</p>
 
-    <a href="/auth/login">Already registered? Sign in!</a>
-    <a href="/auth/registration">Don't have an account yet? Sign up!</a>
-  </div>
+  <% if (!loggedIn) { %>
+  <ul>
+    <li>
+      <a href="/auth/login">Already registered? Sign in!</a>
+    </li>
+    <li>
+      <a href="/auth/registration">Don't have an account yet? Sign up!</a>
+    </li>
+  </ul>
+  <% } %>
+</div>
 
 <%- include('./partials/footer.ejs') %>

@@ -18,6 +18,7 @@ app.use(viewEngine(oakAdapter, ejsEngine, {
 app.use(middleware.errorMiddleware);
 app.use(middleware.requestTimingMiddleware);
 app.use(middleware.serveStaticFilesMiddleware);
+app.use(middleware.authMiddleware);
 
 app.use(router.routes());
 

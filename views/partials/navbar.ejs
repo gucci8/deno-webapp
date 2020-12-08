@@ -1,9 +1,17 @@
 <nav class="navbar navbar-dark bg-primary">
   <div class="container-fluid">
-    <a class="navbar-brand">Self-monitoring app</a>
+    <a class="navbar-brand" href="/">Self-monitoring app</a>
+
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <li class="nav-item">
+        <a class="nav-link active" href="/behavior/reporting">Behavior reporting</a>
+      </li>
+    </ul>
+
     <span class="navbar-text">
       <%= message %>
     </span>
+
     <% if (loggedIn) { %>
     <form class="d-flex" method="POST" action="/auth/logout">
       <button class="btn btn-outline-success" type="submit">Log out</button>
@@ -13,5 +21,6 @@
       <button class="btn btn-outline-success" type="submit">Sign in</button>
     </form>
     <% } %>
+
   </div>
 </nav>

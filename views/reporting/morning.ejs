@@ -1,0 +1,64 @@
+<%- include('../partials/header.ejs') %>
+<%- include('../partials/navbar.ejs') %>
+
+<div class="container">
+    <h1>How was your morning?</h1>
+    <form method="POST" action="/behavior/reporting/morning">
+        <fieldset>
+
+            <div class="input-group">
+                <span class="input-group-text">Date</span>
+                <input type="number" class="form-control" min="1" max="31" name="day" value="<%= day %>">
+                <input type="number" class="form-control" min="1" max="12" name="month" value="<%= month %>">
+                <input type="number" class="form-control" min="1900" max="2100" name="year" value="<%= year %>">
+            </div>
+
+            <div class="form-group">
+                <label for="customRange1" class="form-label">How many hours did you sleep?</label>
+            </div>
+
+            <div class="form-group">
+                <span class="font-weight-bold blue-text mr-2 mt-1">0</span>
+                <input type="range" class="form-range" min="0" max="12" step="0.5" id="customRange1" name="sleepduration">
+                <span class="font-weight-bold blue-text mr-2 mt-1">12</span>
+            </div>
+
+
+            <div class="form-group">
+                <label for="customRange2" class="form-label">Rate your sleep quality:</label>
+            </div>
+
+            <div class="form-group">
+                <span class="font-weight-bold blue-text mr-2 mt-1">1</span>
+                <input type="range" class="form-range" min="1" max="5" step="1" id="customRange2" name="sleepquality">
+                <span class="font-weight-bold blue-text mr-2 mt-1">5</span>
+            </div>
+
+
+            <div class="form-group">
+                <label for="customRange3" class="form-label">Rate your generic mood:</label>
+            </div>
+
+            <div class="form-group">
+                <span class="font-weight-bold blue-text mr-2 mt-1">1</span>
+                <input type="range" class="form-range" min="1" max="5" step="1" id="customRange3" name="genericmood">
+                <span class="font-weight-bold blue-text mr-2 mt-1">5</span>
+            </div>
+
+
+            <input type="submit" value="Rate your morning!" class="btn btn-primary" />
+
+        </fieldset>
+    </form>
+
+    <ul>
+        <li>
+            <a href="/behavior/reporting/evening">Want to rate your evening instead?</a>
+        </li>
+        <li>
+            <a href="/behavior/reporting">Back to reporting index page</a>
+        </li>
+    </ul>
+</div>
+
+<%- include('../partials/footer.ejs') %>

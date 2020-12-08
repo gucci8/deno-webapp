@@ -6,11 +6,12 @@
       <fieldset>
         <div class="form-group">
           <label for="email">Email: </label>
-          <input class="form-control" type="email" id="email" name="email" />
+          <input class="form-control" type="email" id="email" name="email" value="<%= email %>"/>
           <label for="password">Password: </label>
           <input class="form-control" type="password" id="password" name="password" />
         </div>
         <input type="submit" value="Sign in" class="btn btn-primary" />
+        <%= error %>
       </fieldset>
     </form>
   <a href="/auth/registration">Don't have an account yet? Sign up!</a>
