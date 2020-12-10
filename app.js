@@ -23,8 +23,4 @@ app.use(middleware.authMiddleware);
 
 app.use(router.routes());
 
-if (!Deno.env.get('TEST_ENVIRONMENT')) {
-  app.listen({ port: 7777 });
-}
-    
-export default app;
+app.listen({ port: 7777 });
