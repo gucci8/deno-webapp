@@ -25,3 +25,8 @@ CREATE TABLE ereports (
     genericmood NUMERIC(1) CHECK (genericmood <= 5 AND genericmood >= 1),
     user_id INTEGER REFERENCES users(id)
 );
+
+Get all data from last week:
+SELECT M.date, sleepduration, sleepquality, (M.genericmood + E.genericmood) / 2 AS genericmood, sportduration, studyduration, regularity, eatquality
+FROM mreports AS M, ereports AS E
+WHERE M.date = E.date AND M.user_id = E.user_id AND M.user_id = 1 AND M.date > date '2020-12-11' - integer '7';

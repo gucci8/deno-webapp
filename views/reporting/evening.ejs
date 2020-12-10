@@ -6,15 +6,17 @@
     <form method="POST" action="/behavior/reporting/evening">
         <fieldset>
             
-            <div class="input-group">
-                <span class="input-group-text">Date</span>
-                <input type="number" class="form-control" min="1" max="31" name="day" value="<%= day %>">
-                <input type="number" class="form-control" min="1" max="12" name="month" value="<%= month %>">
-                <input type="number" class="form-control" min="1900" max="2100" name="year" value="<%= year %>">
+            <div class="form-group">
+                <label for="customRange1" class="form-label">Choose the evening you want to report:</label>
             </div>
 
             <div class="form-group">
-                <label for="customRange1" class="form-label">How many hours did you exercise?</label>
+                <input type="date" min="2020-01-01" max="2030-12-31" name="date" value="<%= date %>">
+            </div>
+
+
+            <div class="form-group">
+                <label for="customRange1" class="form-label">How many hours did you do sports and exercise?</label>
             </div>
 
             <div class="form-group">
@@ -40,9 +42,9 @@
             </div>
 
             <div class="form-group">
-                <span class="font-weight-bold blue-text mr-2 mt-1">1</span>
+                <span class="font-weight-bold blue-text mr-2 mt-1">1 (Bad)</span>
                 <input type="range" class="form-range" min="1" max="5" step="1" id="customRange3" name="regularity">
-                <span class="font-weight-bold blue-text mr-2 mt-1">5</span>
+                <span class="font-weight-bold blue-text mr-2 mt-1">5 (Perfect)</span>
             </div>
 
 
@@ -51,9 +53,9 @@
             </div>
 
             <div class="form-group">
-                <span class="font-weight-bold blue-text mr-2 mt-1">1</span>
+                <span class="font-weight-bold blue-text mr-2 mt-1">1 (Very unhealthily)</span>
                 <input type="range" class="form-range" min="1" max="5" step="1" id="customRange4" name="eatquality">
-                <span class="font-weight-bold blue-text mr-2 mt-1">5</span>
+                <span class="font-weight-bold blue-text mr-2 mt-1">5 (Very healthily)</span>
             </div>
 
 
@@ -62,9 +64,9 @@
             </div>
 
             <div class="form-group">
-                <span class="font-weight-bold blue-text mr-2 mt-1">1</span>
+                <span class="font-weight-bold blue-text mr-2 mt-1">1 (Bad)</span>
                 <input type="range" class="form-range" min="1" max="5" step="1" id="customRange5" name="genericmood">
-                <span class="font-weight-bold blue-text mr-2 mt-1">5</span>
+                <span class="font-weight-bold blue-text mr-2 mt-1">5 (Perfect)</span>
             </div>
 
 

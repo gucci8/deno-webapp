@@ -5,6 +5,7 @@
   <h1>Welcome!</h1>
   <p>Welcome to Self-Monitoring Application made by Kusti Hämäläinen at December 2020 for course project.</p>
   <p>This website is for monitoring well-being and lifestyle.</p>
+  <p>Report your feelings from mornings or evenings at "Behavior reporting" and inspect your weekly or monthly feelings at "Summaries".</p>
 
   <% if (!loggedIn) { %>
   <ul>
@@ -15,6 +16,16 @@
       <a href="/auth/registration">Don't have an account yet? Sign up!</a>
     </li>
   </ul>
+  <% } else { %>
+    <div class="card">
+      <div class="card-header">
+        <h2><%= glimpse.greet %></h2>
+      </div>
+      <div class="card-body">
+        <p>Your average mood today: <%= glimpse.mood_today %></p>
+        <p>Your average mood yesterday: <%= glimpse.mood_yesterday %></p>
+      </div>
+    </div>
   <% } %>
 </div>
 

@@ -4,7 +4,7 @@ const dateValidate = (day, month, year) => {
         maxdays[1] = 29;
     }
 
-    if (day > maxdays[month - 1]) {
+    if (day > maxdays[month - 1] || day <= 0 || month <= 0 || month > 12) {
         return null;
     } else {
         if (month < 10 && day < 10) {

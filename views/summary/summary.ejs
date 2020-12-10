@@ -1,0 +1,45 @@
+<%- include('../partials/header.ejs') %>
+<%- include('../partials/navbar.ejs') %>
+
+<div class="container">
+    <h1>Summary</h1>
+    <form method="POST" action="/behavior/summary">
+        <fieldset>
+            <div class="form-group">
+                <label for="customRange1" class="form-label">Pick a date to inspect the past week and month:</label>
+            </div>
+
+            <div class="form-group">
+                <input type="date" min="2020-01-01" max="2030-12-31" name="date" value="<%= date %>">
+            </div>
+
+            <input type="submit" value="View data of the past period" class="btn btn-primary" />
+        </fieldset>
+    </form>
+
+    <% if (weekdata.mornings.sld !== null) { %>
+    <h2>Weekly summary</h2>
+    <ul>
+        <li>Slept in average: <%=       Number(weekdata.mornings.sld).toPrecision(2) %> hours</li>
+        <li>Exercised in average: <%=   Number(weekdata.evenings.spd).toPrecision(2) %> hours</li>
+        <li>Studied in average: <%=     Number(weekdata.evenings.std).toPrecision(2) %> hours</li>
+        <li>Average sleep quality: <%=  Number(weekdata.mornings.slq).toPrecision(2) %>/5</li>
+        <li>Average eating quality: <%= Number(weekdata.evenings.eq).toPrecision(2) %>/5</li>
+        <li>Average regularity: <%=     Number(weekdata.evenings.r).toPrecision(2) %>/5</li>
+        <li>Average generic mood: <%=   Number(weekdata.genericmood.gm).toPrecision(2) %>/5</li>
+    </ul>
+    <h2>Monthly summary</h2>
+    <ul>
+        <li>Slept in average: <%=       Number(monthdata.mornings.sld).toPrecision(2) %> hours</li>
+        <li>Exercised in average: <%=   Number(monthdata.evenings.spd).toPrecision(2) %> hours</li>
+        <li>Studied in average: <%=     Number(monthdata.evenings.std).toPrecision(2) %> hours</li>
+        <li>Average sleep quality: <%=  Number(monthdata.mornings.slq).toPrecision(2) %>/5</li>
+        <li>Average eating quality: <%= Number(monthdata.evenings.eq).toPrecision(2) %>/5</li>
+        <li>Average regularity: <%=     Number(monthdata.evenings.r).toPrecision(2) %>/5</li>
+        <li>Average generic mood: <%=   Number(monthdata.genericmood.gm).toPrecision(2) %>/5</li>
+    </ul>
+    <% } else { %>
+        <h2>You haven't submitted anything for this period.</h2>
+    <% } %>
+</div>
+<%- include('../partials/footer.ejs') %>

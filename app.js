@@ -12,7 +12,8 @@ app.use(session.use()(session));
 const ejsEngine = engineFactory.getEjsEngine();
 const oakAdapter = adapterFactory.getOakAdapter();
 app.use(viewEngine(oakAdapter, ejsEngine, {
-    viewRoot: "./views"
+    viewRoot: "./views",
+    useCache: true
 }));
 
 app.use(middleware.errorMiddleware);

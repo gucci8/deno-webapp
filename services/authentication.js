@@ -1,6 +1,8 @@
 import { executeQuery } from "../database/database.js";
 import { bcrypt } from "../deps.js";
 
+//Registration/login queries not cached for security reasons
+
 const postRegistrationForm = async({request, render, response}) => {
     const body = request.body();
     const params = await body.value;
