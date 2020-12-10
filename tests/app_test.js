@@ -35,6 +35,7 @@ Deno.test("dateValidate formats valid dates correctly", () => {
   assertEquals(dateValidate(31,12,2020), "2020-12-31");
 });
 
+/*
 Deno.test("getNavBarContent should return correct message when not logged in and variable loggedIn is false", async() => {
   let testClient = await superoak(app);
   let res = await testClient
@@ -51,7 +52,7 @@ Deno.test("getNavBarContent should return correct message when not logged in and
     .set("Cookie", cookie)
     .expect(200);
 });
-
+*/
 
 /*
 Deno.test("dateValidate returns null for invalid dates", () => {
