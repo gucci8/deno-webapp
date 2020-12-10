@@ -1,8 +1,15 @@
 import { Pool } from "../deps.js";
-import { config } from "../config/config.js";
+//import { config } from "../config/config.js";
 
+const DATABASE_URL = Deno.env.toObject().DATABASE_URL;
 const CONCURRENT_CONNECTIONS = 5;
-const connectionPool = new Pool(config.database, CONCURRENT_CONNECTIONS);
+const connectionPool = new Pool(DATABASE_URL, CONCURRENT_CONNECTIONS);
+let port = 7777;
+if (Deno.args.length > 0) {
+    const lastArgument = Deno.args[Deno.args.length - 1];
+    port = Number(lastArgument);
+}
+
 
 let cache = {};
 
