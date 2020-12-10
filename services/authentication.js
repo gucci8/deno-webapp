@@ -12,7 +12,13 @@ const postRegistrationForm = async({request, render, response}) => {
 
     let error = "";
 
-    if (password.length <= 4) {
+    if (email.length < 7) { //Validates email. Form type "email" validates that address has '@'
+      error = 'Please enter a valid email.';
+      render('register.ejs', { email, error });
+      return;
+    }
+
+    if (password.length < 4) {
       error = 'Password must contain at least 4 characters.';
       render('register.ejs', { email, error });
       return;

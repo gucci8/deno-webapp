@@ -1,8 +1,8 @@
 import { Pool } from "../deps.js";
 import { config } from "../config/config.js"; 
 
-const DATABASE_URL = Deno.env.toObject().DATABASE_URL; //Value of DATABASE_URL replaced with 'config.database' when running locally
-//const DATABASE_URL = config.database;
+let DATABASE_URL = Deno.env.toObject().DATABASE_URL;
+DATABASE_URL = config.database; //UNCOMMENT THIS WHEN TESTING LOCALLY
 const CONCURRENT_CONNECTIONS = 5;
 const connectionPool = new Pool(DATABASE_URL, CONCURRENT_CONNECTIONS);
 

@@ -4,7 +4,7 @@
 <div class="container">
   <h1>Welcome!</h1>
   <p>Welcome to Self-Monitoring Application made by Kusti Hämäläinen at December 2020 for course project.</p>
-  <p>This website is for monitoring well-being and lifestyle.</p>
+  <p>This website is for monitoring daily well-being and lifestyle. When logged in, you can see a trend of your mood today and yesterday.</p>
   <p>Report your feelings from mornings or evenings at "Behavior reporting" and inspect your weekly or monthly feelings at "Summaries".</p>
 
   <% if (!loggedIn) { %>
@@ -27,6 +27,9 @@
       </div>
     </div>
   <% } %>
+
+  <p>We also offer an API, accessible without registration <a href="/api/summary">here</a></p>
+  <p>and another to retrieve data from a specific day at the same address, but with "/year/month/day" in the end of the URL.</p>
 </div>
 
 <%- include('./partials/footer.ejs') %>

@@ -1,4 +1,3 @@
-import { dateValidate } from "../../utils/dateValidate.js";
 import { isItDoneToday } from "../../services/report.js"
 import { glimpse } from "../../services/summary.js"
 import { getNavbarContent } from "./getNavbarContent.js";
@@ -31,19 +30,11 @@ const showRepIndex = async({session, render}) => {
 
 const showRepM = async({session, render}) => {
   const content = await getNavbarContent({session});
-
-  var d = new Date();
-  content.date = dateValidate(d.getDate(), d.getMonth() + 1, d.getFullYear())
-
   render('/reporting/morning.ejs', content);
 }
 
 const showRepE = async({session, render}) => {
   const content = await getNavbarContent({session});
-
-  var d = new Date();
-  content.date = dateValidate(d.getDate(), d.getMonth() + 1, d.getFullYear())
-
   render('/reporting/evening.ejs', content);
 }
 

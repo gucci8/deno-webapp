@@ -53,17 +53,17 @@ const glimpse = async({session}) => {
     const res_yesterday = await executeCachedQuery("SELECT AVG(S.genericmood) AS avg FROM ( SELECT genericmood, date, user_id FROM mreports UNION SELECT genericmood, date, user_id FROM ereports ) AS S WHERE S.user_id = $1 AND S.date = $2::DATE - 1",
     user.id, date);
 
-    if (res_today.rowCount === 0 || res_yesterday.rowCount === 0) {
+    const ret = {};
+    ret.mood_today = Number(res_today.rowsOfObjects()[0].avg).toPrecision(2);
+    ret.mood_yesterday = Number(res_yesterday.rowsOfObjects()[0].avg).toPrecision(2);
+
+    if (ret.mood_today < 1 || ret.mood_yesterday < 1) {
         return {
             mood_today: 'I have no idea :(',
             mood_yesterday: 'I have no idea :(',
-            greet: 'Report your today and yesterday to let me catch a glimpse of your feelings :3'
+            greet: 'Rate your days to let me know, how you feel :3'
         };
     } else {
-        const ret = {};
-        ret.mood_today = Number(res_today.rowsOfObjects()[0].avg).toPrecision(2);
-        ret.mood_yesterday = Number(res_yesterday.rowsOfObjects()[0].avg).toPrecision(2);
-
         if (ret.mood_today < ret.mood_yesterday) {
             ret.greet = 'Things are looking gloomy today.';
         } else if (ret.mood_today > ret.mood_yesterday) {

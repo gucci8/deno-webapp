@@ -1,3 +1,5 @@
+//Configurations for testing database
+
 let config = {};
 
 if (Deno.env.get('TEST_ENVIRONMENT')) {
