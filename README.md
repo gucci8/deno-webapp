@@ -53,9 +53,6 @@
 │   README.md
 |   runtime.txt
 
-
-
-
 ---- FILES EXPLAINED ----
 
 database.js: Database functionalities, using a connection pool of 5 concurrent connections and query caching. Cache is cleared
